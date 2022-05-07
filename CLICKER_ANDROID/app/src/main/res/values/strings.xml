@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CLICKER_ANDROID</string>
+    <string name="cash_amount">0</string>
+    <string name="value_improve">Цена: 0</string>
+    <string name="power_autoclick">0 мощность автоклика в секунду</string>
+    <string name="mining">+ 0.1 клик</string>
+    <string name="mining2">+ 0.3 клик</string>
+    <string name="Store">Магазин</string>
+    <string name="AutoClickButton">MINING</string>
+    <string name="AutoClickButton2">NFT</string>
+
+</resources>
