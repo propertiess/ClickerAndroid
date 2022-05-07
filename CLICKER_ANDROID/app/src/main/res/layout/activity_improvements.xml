@@ -25,99 +25,105 @@
 
         />
 
-
-
-    <Button
-        android:id="@+id/autoclick_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/cashInTheStore"
-        android:height="110dp"
-        android:width="100dp"
-        android:layout_marginLeft="15dp"
-        android:layout_alignLeft="@id/powerofclick"
-        android:soundEffectsEnabled="false"
-        android:text="@string/AutoClickButton"
-        android:textColor="@color/white"
-        />
+        android:onClick="@string/AutoClickButton" />
 
-    <TextView
-        android:id="@+id/powerofclick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cashInTheStore"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
 
-        android:layout_centerInParent="true"
-        android:width="70dp"
-        android:height="110dp"
-        android:fontFamily="@font/montserrat_alternates_semibold"
-        android:gravity="center"
-        android:text="@string/mining"
-        android:textSize="20sp" />
+    <!--    <Button-->
+<!--        android:id="@+id/autoclick_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/cashInTheStore"-->
+<!--        android:height="110dp"-->
+<!--        android:width="100dp"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_alignLeft="@id/powerofclick"-->
+<!--        android:soundEffectsEnabled="false"-->
+<!--        android:text="@string/AutoClickButton"-->
+<!--        android:textColor="@color/white"-->
+<!--        />-->
 
-    <TextView
-        android:id="@+id/cost_autoclick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="150dp"
-        android:height="110dp"
-        android:layout_below="@id/cashInTheStore"
-        android:layout_marginRight="5dp"
-        android:layout_alignRight="@id/powerofclick"
-        android:gravity="center"
-        android:paddingLeft="10dp"
+<!--    <TextView-->
+<!--        android:id="@+id/powerofclick"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/cashInTheStore"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
 
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="@string/value_improve"
-        android:textSize="30sp"
-    />
-    <Button
-        android:id="@+id/autoclick_button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/autoclick_button"
-        android:layout_alignLeft="@id/powerofclick2"
-        android:layout_marginLeft="15dp"
-        android:height="110dp"
-        android:width="100dp"
-        android:soundEffectsEnabled="false"
-        android:text="@string/AutoClickButton2"
-        android:textColor="@color/white"
-        />
-    <TextView
-        android:id="@+id/powerofclick2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="70dp"
-        android:height="110dp"
-        android:gravity="center"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+<!--        android:layout_centerInParent="true"-->
+<!--        android:width="70dp"-->
+<!--        android:height="110dp"-->
+<!--        android:fontFamily="@font/montserrat_alternates_semibold"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/mining"-->
+<!--        android:textSize="20sp" />-->
 
-        android:layout_centerInParent="true"
-        android:layout_below="@id/powerofclick"
-        android:fontFamily="@font/montserrat_alternates_semibold"
-        android:text="@string/mining2"
-        android:textSize="20sp"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/cost_autoclick"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="150dp"-->
+<!--        android:height="110dp"-->
+<!--        android:layout_below="@id/cashInTheStore"-->
+<!--        android:layout_marginRight="5dp"-->
+<!--        android:layout_alignRight="@id/powerofclick"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingLeft="10dp"-->
 
-    <TextView
-        android:id="@+id/cost_autoclick2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="150dp"
-        android:height="110dp"
-        android:layout_below="@id/cost_autoclick"
-        android:layout_alignRight="@id/powerofclick2"
-        android:layout_marginRight="5dp"
-        android:paddingLeft="10dp"
-        android:gravity="center"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="@string/value_improve"
-        android:textSize="30sp"
-        />
+<!--        android:fontFamily="@font/montserrat_alternates_bold"-->
+<!--        android:text="@string/value_improve"-->
+<!--        android:textSize="30sp"-->
+<!--    />-->
+<!--    <Button-->
+<!--        android:id="@+id/autoclick_button2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/autoclick_button"-->
+<!--        android:layout_alignLeft="@id/powerofclick2"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:height="110dp"-->
+<!--        android:width="100dp"-->
+<!--        android:soundEffectsEnabled="false"-->
+<!--        android:text="@string/AutoClickButton2"-->
+<!--        android:textColor="@color/white"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:id="@+id/powerofclick2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="70dp"-->
+<!--        android:height="110dp"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_below="@id/powerofclick"-->
+<!--        android:fontFamily="@font/montserrat_alternates_semibold"-->
+<!--        android:text="@string/mining2"-->
+<!--        android:textSize="20sp"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/cost_autoclick2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="150dp"-->
+<!--        android:height="110dp"-->
+<!--        android:layout_below="@id/cost_autoclick"-->
+<!--        android:layout_alignRight="@id/powerofclick2"-->
+<!--        android:layout_marginRight="5dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:gravity="center"-->
+<!--        android:fontFamily="@font/montserrat_alternates_bold"-->
+<!--        android:text="@string/value_improve"-->
+<!--        android:textSize="30sp"-->
+<!--        />-->
 
 
 

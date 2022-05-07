@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/autoclick_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/powerofclick"
+        android:layout_marginLeft="10dp"
+        android:width="120dp"
+        android:height="110dp"
+        android:soundEffectsEnabled="false"
+        android:text="@string/AutoClickButton"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/powerofclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+
+        android:width="120dp"
+        android:height="110dp"
+        android:fontFamily="@font/montserrat_alternates_semibold"
+        android:gravity="center"
+        android:text="@string/mining"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/cost_autoclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/powerofclick"
+        android:layout_marginRight="10dp"
+        android:width="120dp"
+        android:height="110dp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:gravity="center"
+
+        android:paddingLeft="10dp"
+        android:text="@string/value_improve"
+        android:textSize="30sp" />
+
+</RelativeLayout>

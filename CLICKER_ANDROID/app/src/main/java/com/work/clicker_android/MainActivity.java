@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity  {
     MediaPlayer coinSound;
     private Animation imageAnimation;
     private ImageButton coinButton;
-    static Thread autoClick;
+    public static Thread autoClick;
     private Button store;
     public static float multiply = 0;
     public static float cash;
@@ -42,37 +43,12 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         init();
 
-//        autoClick = new AutoClick();
-
         EventHandler();
 
 
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        try {
-//            if (!autoClick.isAlive()) {
-//                autoClick.start();
-//            }
-//        }
-//        catch (Exception e){
-//
-//        }
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        try {
-//            if (autoClick.isAlive()) {
-//                autoClick.interrupt();
-//            }
-//        } catch (Exception e){
-//
-//        }
-//    }
+
     private void init() {
         handler = new Handler();
         cash_amount = findViewById(R.id.cash);
@@ -127,16 +103,15 @@ public class MainActivity extends AppCompatActivity  {
         });
 
     }
-    public static void startAutoClick(){
+    public static void startAutoClick() {
         Handler handler = new Handler();
-        Runnable runnable = new Runnable(){
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                while(isActive){
-                    try{
+                while (isActive) {
+                    try {
                         Thread.sleep(1000);
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
                         break;
                     }
                     handler.post(new Runnable() {
@@ -145,8 +120,8 @@ public class MainActivity extends AppCompatActivity  {
 //                            cash_float += multiply;
                             cash += multiply;
                             System.out.println(cash);
-                            cash_amount.setText("" + (int)cash);
-                            improvements.cash_store.setText("" + (int)cash);
+                            cash_amount.setText("" + (int) cash);
+                            improvements.cash_store.setText("" + (int) cash);
                             String temp = String.format("%.1f", multiply);
                             auto_multiply.setText(temp + " мощность автоклика в секунду");
 
@@ -159,7 +134,6 @@ public class MainActivity extends AppCompatActivity  {
         autoClick = new Thread(runnable);
         autoClick.start();
     }
-
 
 
 
