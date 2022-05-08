@@ -1,9 +1,8 @@
 package com.work.clicker_android.adapter;
 
-import static com.work.clicker_android.improvements.buy_sound;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import java.util.List;
 
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
+
     Context context;
     improvements improve;
     List<Product> productList;
@@ -39,51 +39,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(productItems);
     }
 
+    @SuppressLint({"SetTextI18n", "NotifyDataSetChanged"})
     @Override
     public synchronized void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder holder, int position) {
         holder.name_improve.setText(productList.get(position).getName_improve());
         holder.speed_improve.setText("+" + productList.get(position).getSpeed_improve() + " клик");
         holder.value_improve.setText("Цена: " + productList.get(position).getValue_improve());
+
         improve = new improvements();
         holder.name_improve.setOnClickListener(view -> {
+
             if(MainActivity.cash >= productList.get(position).getValue_improve()){
-                if (improvements.level_button_autoclick == 1) {
-                        MainActivity.startAutoClick();
-                    }
-                buy_sound = MediaPlayer.create(improve.cash_store.getContext(), R.raw.sound_buy);
-                buy_sound.start();
-                buy_sound.setOnCompletionListener(MediaPlayer::release);
-                MainActivity.cash -= productList.get(position).getValue_improve();
-                MainActivity.cash_amount.setText(String.valueOf((int) MainActivity.cash));
+                improve.Buying(productList.get(position).getValue_improve(), position,
+                        productList.get(position).getSpeed_improve(), context);
+                productList.get(position).setValue_improve(improvements.costAutoClick[position]);
 
-                improve.cash_store.setText(String.valueOf((int) MainActivity.cash));
-                improvements.costAutoClick *= 2;
-                productList.get(position).setValue_improve(improvements.costAutoClick);
-//                holder.value_improve.setText("Цена: " + productList.get(position).getValue_improve()*2);
-
-                MainActivity.multiply += productList.get(position).getSpeed_improve();
-                System.out.println(position);
-                improvements.level_button_autoclick++;
-
+                holder.value_improve.setText("Цена: " + productList.get(position).getValue_improve()*2);
                 notifyDataSetChanged();
-//            if(productList == null) {
-//                productList = new ArrayList<>();
-//            }
-
-//            productList = copy;
-//            productList.remove(position);
-//            productList.add(position, new Product(name_improve, speed_improve, costAutoClick, level_button_autoclick));
-//            copy = productList;
-
             }
             else {
-                Toast.makeText(improve.cash_store.getContext(), "Валюты недостаточно для покупки улучшения!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Валюты недостаточно для покупки улучшения!", Toast.LENGTH_LONG).show();
             }
-//            try {
-//                notifyDataSetChanged();
-//            } catch (Exception e){
-//                System.out.println("Error notify");
-//            }
         });
     }
 
