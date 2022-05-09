@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity  {
     private void init() {
         handler = new Handler();
         cash_amount = findViewById(R.id.cash);
-        coinButton = findViewById(R.id.coinButton);
         store = findViewById(R.id.toTheStore);
+        coinButton = findViewById(R.id.coinButton);
         auto_multiply = findViewById(R.id.multiply);
         improve = new improvements();
         myPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity  {
             startAutoClick();
             counterThread++;
         }
-        auto_multiply.setText(multiply + " мощность автоклика в секунду");
+
+        @SuppressLint("DefaultLocale") String temp = String.format("%.1f", multiply);
+        auto_multiply.setText(temp + " мощность автоклика в секунду");
 
         cash_amount.setText("" + (int)cash);
 
