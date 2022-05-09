@@ -23,7 +23,7 @@ import java.util.List;
 
 public class improvements extends AppCompatActivity {
     public static TextView cash_store;
-    public MediaPlayer buy_sound;
+    public MediaPlayer buy_sound, buy_btc;
     public  static long[] costAutoClick;
     static String[] nameImprove;
     public static float[] speedImprove;
@@ -126,9 +126,17 @@ public class improvements extends AppCompatActivity {
                 MainActivity.startAutoClick();
                 MainActivity.counterThread++;
             }
-            buy_sound = MediaPlayer.create(context, R.raw.sound_buy);
-            buy_sound.start();
-            buy_sound.setOnCompletionListener(MediaPlayer::release);
+            if(position == 4){
+                buy_btc = MediaPlayer.create(context,R.raw.bought_btc);
+                buy_btc.start();
+                buy_btc.setOnCompletionListener(MediaPlayer::release);
+            }
+            else{
+                buy_sound = MediaPlayer.create(context, R.raw.sound_buy);
+                buy_sound.start();
+                buy_sound.setOnCompletionListener(MediaPlayer::release);
+            }
+
             MainActivity.cash -= value;
             MainActivity.cash_amount.setText(String.valueOf((int) MainActivity.cash));
 
