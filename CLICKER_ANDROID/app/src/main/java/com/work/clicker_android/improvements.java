@@ -156,7 +156,7 @@ public class improvements extends AppCompatActivity {
 
         }
         else {
-            Toast.makeText(context, "Валюты недостаточно для покупки улучшения!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Валюты недостаточно для покупки улучшения!", Toast.LENGTH_SHORT).show();
         }
 
     }
